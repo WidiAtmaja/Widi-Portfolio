@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* src/style.css atau src/assets/main.css */
+
+body {
+  overflow-x: hidden; /* Ini yang menghilangkan ruang sisa di kanan */
+  width: 100%;
+}
+
 /* global.css (letakkan setelah import tailwind) */
 .text-stroke {
   -webkit-text-stroke-width: 2px;
