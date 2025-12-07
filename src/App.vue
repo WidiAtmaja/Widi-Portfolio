@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-slate-800 min-h-screen font-sans transition-colors duration-300 w-full relative">
+  <div class="bg-white dark:bg-slate-800 min-h-screen font-sans transition-colors duration-300 overflow-x-hidden w-full relative pt-16">
     <Navbar />
     <router-view />
     <FooterSection />

@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-50 bg-white dark:bg-slate-800 shadow">
+  <header class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-slate-800 shadow transition-all duration-300">
     <div class="flex justify-between items-center p-5 lg:px-12 relative z-20">
       <div class="text-2xl font-bold dark:text-white hover:text-sky-500 hover:dark:text-sky-200"><a href="/">Widi Atmaja</a></div>
 
@@ -29,7 +29,7 @@
 
       <!-- Nav Bar Link-->
       <Transition name="slide-fade">
-        <nav v-show="isMenuOpen" class="fixed inset-0 z-20 flex flex-col items-center justify-center bg-white dark:bg-slate-800 md:relative md:flex md:flex-row md:!block">
+        <nav v-show="isMenuOpen" class="fixed top-0 left-0 inset-0 z-20 flex flex-col items-center justify-center bg-white dark:bg-slate-800 md:relative md:flex-row md:!block">
           <ul class="flex flex-col items-center space-y-2 md:flex-row md:space-x-5 md:space-y-0">
             <li v-for="item in menu" :key="item.name">
               <a
