@@ -387,7 +387,7 @@ export const projectWebDev = [
     title: 'BPS Intership Blog',
     slug: 'bps-intership-blog',
     role: 'Full Stack',
-    timeline: 'Jul 2024',
+    timeline: 'July 2024',
     team: '-',
     type: 'Independent Project',
     link: 'https://widiatmaja.github.io/magang/index.html',

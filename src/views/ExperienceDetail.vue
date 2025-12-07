@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="w-full h-[300px] md:h-[450px] border-2 border-black dark:border-white rounded-[40px] overflow-hidden mb-10">
+      <div class="w-full h-full md:h-full border-2 border-black dark:border-white rounded-[40px] overflow-hidden mb-10">
         <img :src="experience.image" class="w-full h-full object-cover" :alt="experience.title" />
       </div>
 
@@ -52,8 +52,8 @@
       </div>
 
       <div class="mt-7 grid md:grid-cols-2 gap-5" v-if="experience.gallery.length > 1">
-        <img v-if="experience.gallery[0]" :src="experience.gallery[0]" class="border border-black w-full h-[450px] object-cover rounded-3xl" alt="Exp visual 1" />
-        <img v-if="experience.gallery[1]" :src="experience.gallery[1]" class="border border-black w-full h-[450px] object-cover rounded-3xl" alt="Exp visual 2" />
+        <img v-if="experience.gallery[0]" :src="experience.gallery[0]" class="border border-black w-full h-full md:h-full object-cover rounded-3xl" alt="Exp visual 1" />
+        <img v-if="experience.gallery[1]" :src="experience.gallery[1]" class="border border-black w-full h-full md:h-full object-cover rounded-3xl" alt="Exp visual 2" />
       </div>
 
       <div class="mt-7 prose dark:prose-invert max-w-none text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
@@ -61,12 +61,16 @@
       </div>
 
       <div class="mt-7 grid md:grid-cols-1 gap-5" v-if="experience.gallery.length > 1">
-        <img v-if="experience.gallery[2]" :src="experience.gallery[2]" class="border border-black w-full h-[450px] object-cover rounded-3xl" alt="Exp visual 3" />
-        <img v-if="experience.gallery[3]" :src="experience.gallery[3]" class="border border-black w-full h-[450px] object-cover rounded-3xl" alt="Exp visual 4" />
-        <img v-if="experience.gallery[4]" :src="experience.gallery[4]" class="border border-black w-full h-[450px] object-cover rounded-3xl" alt="Exp visual 5" />
+        <img v-if="experience.gallery[2]" :src="experience.gallery[2]" class="border border-black w-full h-full md:h-full object-cover rounded-3xl" alt="Exp visual 3" />
+        <img v-if="experience.gallery[3]" :src="experience.gallery[3]" class="border border-black w-full h-full md:h-full object-cover rounded-3xl" alt="Exp visual 4" />
+        <img v-if="experience.gallery[4]" :src="experience.gallery[4]" class="border border-black w-full h-full md:h-full object-cover rounded-3xl" alt="Exp visual 5" />
       </div>
 
-      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+      <div class="mt-7 prose dark:prose-invert max-w-none text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+        <div v-html="experience.content[2]"></div>
+      </div>
+
+      <div v-if="experience.tags && experience.tags.length > 0 && experience.tags[0] !== ''" class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
         <h3 class="text-xl font-bold mb-4 dark:text-white">Skills & Technologies:</h3>
         <div class="flex flex-wrap gap-3">
           <span

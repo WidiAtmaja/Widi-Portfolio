@@ -81,8 +81,8 @@
   // Warna khusus yang stabil untuk Vanta
   const getThemeColors = (isDark) => {
     return {
-      color: isDark ? 0x374151 : 0x000000,
-      backgroundColor: isDark ? 0x0f172a : 0xf8f6fa,
+      color: isDark ? 0x374151 : 0xffffff,
+      backgroundColor: isDark ? 0x0f172a : 0xededed,
     };
   };
 

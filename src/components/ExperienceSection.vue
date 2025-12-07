@@ -44,7 +44,7 @@
               {{ truncateText(exp.description) }}
             </p>
 
-            <div class="flex flex-wrap gap-2">
+            <div v-if="exp.tags && exp.tags.length > 0 && exp.tags[0] !== ''" class="flex flex-wrap gap-2">
               <span
                 v-for="(tag, index) in exp.tags"
                 :key="index"
