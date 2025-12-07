@@ -1,19 +1,16 @@
 <template>
-  <section id="about-me" class="py-24 bg-gray-50">
+  <section id="about-me" class="py-24 bg-gray-50 dark:bg-slate-900">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-extrabold pb-1 border-b-4 border-black inline-block dark:text-white dark:border-white">ABOUT ME</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-20 items-center">
-        <div class="w-full mx-auto p-8 border-2 border-black dark:border-white rounded-[40px] bg-white dark:bg-slate-800">
+        <div
+          class="w-full mx-auto p-8 border-2 border-black dark:border-white rounded-[40px] bg-white dark:bg-slate-900 transition-all hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1">
           <h2 class="text-3xl font-extrabold italic text-center text-black dark:text-white mb-8">My Skills</h2>
 
           <div v-for="category in skills" :key="category.name" class="mb-8 last:mb-0">
-            <h3 class="text-xl font-bold text-black dark:text-white mb-4">
-              {{ category.name }}
-            </h3>
-
             <div class="grid grid-cols-4 sm:grid-cols-4 gap-y-6 gap-x-2">
               <div v-for="skill in category.items" :key="skill.name" class="flex flex-col items-center">
                 <div
@@ -32,52 +29,31 @@
         </div>
 
         <div>
-          <h3 class="text-2xl font-semibold mb-4">A Little About Me</h3>
-          <p class="text-gray-600 mb-4 leading-relaxed">
-            I'm Widi Atmaja, a creative technologist who bridges the gap between code and design. With a passion for both front-end development and brand identity, I craft digital experiences that are
-            not only functional but visually stunning.
+          <h3 class="text-2xl font-semibold mb-4 text-black dark:text-white">A Little About Me</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+            Hello, I’m Widi Atmaja, a Information Systems graduate (S.Kom) who is passionate about technology and application development. I am currently focusing on becoming a Full Stack Developer
+            and enjoy the process of building digital products from initial ideas to fully usable solutions. I work on frontend, backend, APIs, and system integrations.
           </p>
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            My journey started with a love for problem-solving through code, which naturally evolved into a fascination with design systems and brand storytelling. Today, I help brands and businesses
-            build their digital presence with precision and creativity.
+          <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            In addition to technical abilities, I am equipped with soft skills such as team collaboration, strong communication, effective time management, problem-solving, and the ability to adapt
+            quickly to the work environment.
           </p>
 
-          <div class="justify-center flex gap-5">
-            <!-- Web Developemtn-->
-            <div class="transition-transform transform hover:scale-105 p-8 rounded-3xl border-2 border-black dark:border-white bg-purple-300 dark:bg-purple-700 max-w-sm">
-              <div class="mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-black dark:text-white">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-
-              <h3 class="text-2xl font-bold text-black dark:text-white mb-2">Web Development</h3>
-              <p class="text-gray-700 dark:text-gray-200 text-base">Building responsive, performant web applications with modern technologies</p>
+          <div
+            class="flex items-center p-5 rounded-3xl border-2 border-black dark:border-white bg-rose-200 dark:bg-rose-900/50 transition-all hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1">
+            <div class="flex-shrink-0 mr-5 p-3 rounded-full bg-rose-500 dark:bg-rose-600 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <g fill="#ffffff" fill-rule="evenodd" stroke-width="1.5" clip-rule="evenodd">
+                  <path d="M3.75 12.641v3.271a2.75 2.75 0 0 0 1.57 2.484l5 2.374a2.75 2.75 0 0 0 2.36 0l5-2.374a2.75 2.75 0 0 0 1.57-2.484v-3.27l-6.475 3.237a2.85 2.85 0 0 1-2.55 0z" />
+                  <path d="M10.896 3.464c.38-.19.828-.19 1.208 0l8.658 4.329c.995.497.995 1.917 0 2.415l-8.658 4.33c-.38.19-.828.19-1.208 0l-8.658-4.33c-.995-.498-.995-1.918 0-2.415z" />
+                  <path d="M19.83 8.165a.75.75 0 0 1 1.006-.336l2 1a.75.75 0 0 1 .414.671V13a.75.75 0 1 1-1.5 0V9.964l-1.585-.793a.75.75 0 0 1-.336-1.006" />
+                </g>
+              </svg>
             </div>
 
-            <!-- Brand Design-->
-            <div class="transition-transform transform hover:scale-105 p-8 rounded-3xl border-2 border-black dark:border-white bg-amber-300 dark:bg-amber-700 max-w-sm">
-              <div class="mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
-                  <path
-                    fill="#000"
-                    d="M12 22A10 10 0 0 1 2 12A10 10 0 0 1 12 2c5.5 0 10 4 10 9a6 6 0 0 1-6 6h-1.8c-.3 0-.5.2-.5.5c0 .1.1.2.1.3c.4.5.6 1.1.6 1.7c.1 1.4-1 2.5-2.4 2.5m0-18a8 8 0 0 0-8 8a8 8 0 0 0 8 8c.3 0 .5-.2.5-.5c0-.2-.1-.3-.1-.4c-.4-.5-.6-1-.6-1.6c0-1.4 1.1-2.5 2.5-2.5H16a4 4 0 0 0 4-4c0-3.9-3.6-7-8-7m-5.5 6c.8 0 1.5.7 1.5 1.5S7.3 13 6.5 13S5 12.3 5 11.5S5.7 10 6.5 10m3-4c.8 0 1.5.7 1.5 1.5S10.3 9 9.5 9S8 8.3 8 7.5S8.7 6 9.5 6m5 0c.8 0 1.5.7 1.5 1.5S15.3 9 14.5 9S13 8.3 13 7.5S13.7 6 14.5 6m3 4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5" />
-                </svg>
-              </div>
-
-              <h3 class="text-2xl font-bold text-black dark:text-white mb-2">Brand Design</h3>
-              <p class="text-gray-700 dark:text-gray-200 text-base">Creating memorable visual identities and cohesive brand experiences</p>
+            <div>
+              <h4 class="text-lg font-bold text-black dark:text-white">2021 - 2025</h4>
+              <p class="text-md text-gray-800 dark:text-gray-100 mt-1">Information Systems (S.Kom)</p>
             </div>
           </div>
         </div>
@@ -103,10 +79,12 @@
   const iconPremiere = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#390606" fill-rule="evenodd" d="M4.65.75a3.9 3.9 0 0 0-3.9 3.9v14.7a3.9 3.9 0 0 0 3.9 3.9h14.7a3.9 3.9 0 0 0 3.9-3.9V4.65a3.9 3.9 0 0 0-3.9-3.9zm-2.4 3.9a2.4 2.4 0 0 1 2.4-2.4h14.7a2.4 2.4 0 0 1 2.4 2.4v14.7a2.4 2.4 0 0 1-2.4 2.4H4.65a2.4 2.4 0 0 1-2.4-2.4zM6 6.5h3.5a3.5 3.5 0 1 1 0 7H8v3H6zm2 5h1.5a1.5 1.5 0 0 0 0-3H8zM14.5 9v7.5h2v-4.25a2.35 2.35 0 0 1 .768-.824c.377-.242.921-.426 1.732-.426V9c-.976 0-1.807.196-2.5.56V9z" clip-rule="evenodd"/></svg>`;
   const iconAftereffect = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#390606" fill-rule="evenodd" d="M4.65.75a3.9 3.9 0 0 0-3.9 3.9v14.7a3.9 3.9 0 0 0 3.9 3.9h14.7a3.9 3.9 0 0 0 3.9-3.9V4.65a3.9 3.9 0 0 0-3.9-3.9zm-2.4 3.9a2.4 2.4 0 0 1 2.4-2.4h14.7a2.4 2.4 0 0 1 2.4 2.4v14.7a2.4 2.4 0 0 1-2.4 2.4H4.65a2.4 2.4 0 0 1-2.4-2.4zm1.262 11.822l3.194-9.128v-.66h2.55l3.534 9.788H10.6l-.832-2.287H6.309l-.775 2.287zm3.345-4.233H9.2L8.03 8.422zM19.329 14.6v1.7c-.347.14-1.308.417-2.381.417c-1.342 0-3.78-.643-3.78-3.988c0-2.948 2.174-3.798 3.78-3.798c1.436 0 3.042 1.058 3.042 3.08v1.323h-4.648c.132.535.691 1.606 1.87 1.606s1.903-.227 2.117-.34m-3.969-2.683h2.703c-.032-.466-.34-1.399-1.323-1.399s-1.33.932-1.38 1.399" clip-rule="evenodd"/></svg>`;
   const iconLightroom = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#390606" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M21 7v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4"/><path d="M7 8v8h4m3-5.5V13m0 3v-3m0 0s0-2.5 3-2.5"/></g></svg>`;
+  const iconPHP = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640"><path fill="#111" d="M320 168.5c171.4 0 303.2 72.2 303.2 151.5S491.3 471.5 320 471.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 168.5 320 168.5m0-16.8C143.3 151.7 0 227 0 320s143.3 168.3 320 168.3S640 413 640 320S496.7 151.7 320 151.7M218.2 306.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3M97.4 414.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1c26.1-24 32.9-66.7 14.3-88.1c-9.7-11.2-25.3-16.7-46.5-16.7h-70.7zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7c14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92c-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5zM505 306.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3M384.2 414.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1c26.1-24 32.9-66.7 14.3-88.1c-9.7-11.2-25.3-16.7-46.5-16.7H417z"/></svg>`;
+  const iconFlutter = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#111" d="M5.9 15.375L2.5 12l11-11h6.775zM13.5 23l-5.925-5.925L13.5 11.15h6.775l-5.925 5.925L20.275 23z"/></svg>`;
 
   const skills = ref([
     {
-      name: 'Web Development',
+      name: 'Full Stack Developer',
       colorClass: 'bg-purple-300 dark:bg-purple-500',
       items: [
         { name: 'Laravel', icon: iconLaravel },
@@ -117,22 +95,24 @@
         { name: 'Wordpress', icon: iconWordpress },
         { name: 'Vue JS', icon: iconVuejs },
         { name: 'GitHub', icon: iconGithub },
+        { name: 'PHP', icon: iconPHP },
+        { name: 'Flutter', icon: iconFlutter },
       ],
     },
 
-    {
-      name: 'Brand Design',
-      colorClass: 'bg-yellow-300 dark:bg-yellow-500', // Warna Kuning
-      items: [
-        { name: 'Photoshop', icon: iconPhotoshop },
-        { name: 'Canva', icon: iconCanva },
-        { name: 'Illustrator', icon: iconIllustrator },
-        { name: 'InDesign', icon: iconIndesign },
-        { name: 'Premiere', icon: iconPremiere },
-        { name: 'After Effect', icon: iconAftereffect },
-        { name: 'LightRoom', icon: iconLightroom },
-      ],
-    },
+    // {
+    //   name: 'Brand Design',
+    //   colorClass: 'bg-yellow-300 dark:bg-yellow-500', // Warna Kuning
+    //   items: [
+    //     { name: 'Photoshop', icon: iconPhotoshop },
+    //     { name: 'Canva', icon: iconCanva },
+    //     { name: 'Illustrator', icon: iconIllustrator },
+    //     { name: 'InDesign', icon: iconIndesign },
+    //     { name: 'Premiere', icon: iconPremiere },
+    //     { name: 'After Effect', icon: iconAftereffect },
+    //     { name: 'LightRoom', icon: iconLightroom },
+    //   ],
+    // },
   ]);
 
   function scrollToSection(id) {

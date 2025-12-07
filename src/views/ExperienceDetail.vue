@@ -6,7 +6,9 @@
     </div>
 
     <div v-else class="max-w-4xl mx-auto px-6">
-      <router-link :to="{ name: 'Home' }" class="inline-flex items-center gap-2 mb-8 text-lg font-bold hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors">
+      <router-link
+        :to="{ name: 'Home', hash: '#experience' }"
+        class="inline-flex items-center gap-2 mb-8 text-lg font-bold hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20v-2z" /></svg>
         Back to Experience
       </router-link>

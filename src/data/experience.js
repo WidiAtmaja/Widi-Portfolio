@@ -1,11 +1,14 @@
 export const experienceData = [
   {
     id: 1,
-    slug: 'magang-bps-buleleng',
-    title: 'Magang di Badan Pusat Statistik',
-    date: '22 September 2025',
-    location: 'BPS Kabupaten Buleleng',
-    predicate: 'Selesai',
+    slug: 'intership-bps-buleleng',
+    title: 'Intership Central Statistics Agency (BPS)',
+    date: 'Feb 2024 - Jul 2024',
+    type: 'Intership',
+    location: 'Singaraja',
+    predicate: 'Finish',
+    description:
+      'The Central Statistics Agency (BPS) is a non-ministerial government agency that reports directly to the President and is tasked with conducting statistical activities in accordance with laws and regulations. The types of statistics managed include basic statistics that are fully implemented by BPS, sectoral statistics that are managed by government agencies themselves or in collaboration with BPS, and special statistics that are conducted independently by various parties or in collaboration with BPS.',
     image: new URL('../assets/images/experience/magangtumbnail.png', import.meta.url).href,
     tags: ['Monaku', 'Monalisa', 'Back-End', 'Laravel', 'Blade'],
     tagBgColors: ['bg-cyan-200', 'bg-green-300', 'bg-sky-300', 'bg-red-300', 'bg-orange-300'],
@@ -42,6 +45,7 @@ export const experienceData = [
     slug: 'intern-teknologi-maju',
     title: 'Full Stack Developer Intern',
     date: 'Januari - Juni 2024',
+    type: 'Intership',
     location: 'PT Teknologi Maju',
     predicate: 'Memuaskan',
     image: 'https://placehold.co/800x400/f3f4f6/a3a3a3?text=Coding+Activity',

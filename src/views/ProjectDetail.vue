@@ -1,8 +1,7 @@
 <template>
   <div class="bg-white dark:bg-slate-900 min-h-screen">
     <div v-if="project">
-      <WebDevLayout v-if="project.category.includes('Web') || project.category.includes('Edutech')" :project="project" />
-      <BrandLayout v-else :project="project" />
+      <WebDevLayout v-if="project.category && (project.category.includes('Web') || project.category.includes('Mobile Apps'))" :project="project" />
     </div>
 
     <div v-else class="h-screen flex flex-col items-center justify-center">
@@ -14,14 +13,13 @@
 
 <script setup>
   import { defineProps, ref, onMounted, watch } from 'vue';
-  import { projectWebDev, projectBrandDesign } from '../data/projects';
+  import { projectWebDev } from '../data/projects';
 
   import WebDevLayout from '../components/layouts/WebDevLayout.vue';
-  import BrandLayout from '../components/layouts/BrandLayout.vue';
 
   const props = defineProps({ slug: String });
   const project = ref(null);
-  const allProjects = [...projectWebDev, ...projectBrandDesign];
+  const allProjects = [...projectWebDev];
 
   const fetchProjectDetail = (slug) => {
     project.value = allProjects.find((p) => p.slug === slug) || null;

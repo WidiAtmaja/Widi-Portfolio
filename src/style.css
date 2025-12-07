@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* global.css (letakkan setelah import tailwind) */
+.text-stroke {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: transparent;
+  /* default untuk light mode */
+  -webkit-text-stroke-color: black;
+}
+
+/* override saat dark mode */
+.dark .text-stroke {
+  -webkit-text-stroke-color: white;
+}
+
+/* CSS untuk Animasi Masuk/Keluar Menu Navigasi */
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+/* Posisi Awal saat Menu Masuk dan Posisi Akhir saat Menu Keluar */
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-20px); /* Efek slide sedikit dari atas */
+  opacity: 0; /* Efek memudar */
+}

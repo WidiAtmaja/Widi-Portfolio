@@ -6,12 +6,13 @@
       </div>
 
       <div class="flex flex-col space-y-8">
-        <div
+        <router-link
           v-for="exp in experienceData"
           :key="exp.id"
-          class="flex flex-col md:flex-row border-2 border-black dark:border-white rounded-[40px] overflow-hidden bg-white dark:bg-slate-800 transition-all hover:shadow-lg">
+          :to="{ name: 'ExperienceDetail', params: { slug: exp.slug } }"
+          class="flex flex-col md:flex-row border-2 border-black dark:border-white rounded-[40px] overflow-hidden bg-white dark:bg-slate-900 transition-all hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1">
           <div
-            class="w-full md:w-1/3 lg:w-1/4 min-h-[200px] md:min-h-full bg-gray-50 dark:bg-slate-700 flex items-center justify-center border-b-2 md:border-b-0 md:border-r-2 border-black dark:border-white p-4">
+            class="w-full md:w-1/3 lg:w-1/4 min-h-[200px] md:min-h-full bg-gray-50 dark:bg-slate-900 flex items-center justify-center border-b-2 md:border-b-0 md:border-r-2 border-black dark:border-white p-4">
             <img :src="exp.image" :alt="exp.title" class="w-full h-full object-cover rounded-2xl border border-gray-200 dark:border-gray-600" />
           </div>
 
@@ -22,24 +23,28 @@
 
             <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-4 text-gray-700 dark:text-gray-300">
               <div v-if="exp.date">
-                <span class="font-bold">Tanggal:</span>
+                <span class="font-extrabold text-red-500">Timeline:</span>
                 {{ exp.date }}
               </div>
               <div v-if="exp.location">
-                <span class="font-bold">Tempat:</span>
+                <span class="font-extrabold text-blue-500">Place:</span>
                 {{ exp.location }}
               </div>
               <div v-if="exp.predicate">
-                <span class="font-bold">Predikat:</span>
+                <span class="font-extrabold text-green-500">Predicate:</span>
                 {{ exp.predicate }}
+              </div>
+              <div v-if="exp.type">
+                <span class="font-extrabold text-yellow-500">Type:</span>
+                {{ exp.type }}
               </div>
             </div>
 
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-              {{ truncateText(exp.content[0]) }}
+              {{ truncateText(exp.description) }}
             </p>
 
-            <div class="flex flex-wrap gap-2 mb-6">
+            <div class="flex flex-wrap gap-2">
               <span
                 v-for="(tag, index) in exp.tags"
                 :key="index"
@@ -48,13 +53,8 @@
                 {{ tag }}
               </span>
             </div>
-
-            <router-link :to="{ name: 'ExperienceDetail', params: { slug: exp.slug } }" class="text-blue-600 dark:text-blue-400 font-bold hover:underline text-lg inline-flex items-center gap-1">
-              Selengkapnya
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" /></svg>
-            </router-link>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </section>

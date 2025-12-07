@@ -1,12 +1,16 @@
 <template>
-  <section id="contact" class="py-24 bg-gray-50">
+  <section id="contact" class="py-24 bg-gray-100 dark:bg-slate-800">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <div class="grid md:grid-cols-2 gap-20 items-start">
+        <!-- Bagian Kiri: Informasi Kontak (TETAP SAMA) -->
         <div class="text-left">
           <h2 class="mb-10 text-4xl font-extrabold pb-1 border-b-4 border-black inline-block dark:text-white dark:border-white">GET IN TOUCH</h2>
-          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through the form or contact me directly.</p>
+          <p class="text-black dark:text-white">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through the form or contact me directly.
+          </p>
 
           <div class="flex flex-col space-y-10 mt-12">
+            <!-- Email Item -->
             <div class="flex items-center gap-4">
               <div class="bg-green-300 dark:bg-green-600/50 justify-center border-2 border-black dark:border-white rounded-full p-2.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24" class="dark:fill-white">
@@ -20,6 +24,7 @@
               </div>
             </div>
 
+            <!-- Phone Item -->
             <div class="flex items-center gap-4">
               <div class="bg-amber-300 dark:bg-amber-600/50 justify-center border-2 border-black dark:border-white rounded-full p-2.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24" class="dark:fill-white">
@@ -33,6 +38,7 @@
               </div>
             </div>
 
+            <!-- Github Item -->
             <div class="flex items-center gap-4">
               <div class="bg-red-300 dark:bg-red-600/50 justify-center border-2 border-black dark:border-white rounded-full p-2.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="dark:fill-white">
@@ -49,25 +55,32 @@
           </div>
         </div>
 
-        <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-6 w-full max-w-md mx-auto">
+        <!-- Bagian Kanan: FORMULIR -->
+        <form ref="formRef" @submit.prevent="sendEmail" class="space-y-6 w-full max-w-md mx-auto">
+          <!-- Notifikasi Status -->
+          <div v-if="feedback.message" :class="`p-4 rounded-lg text-sm font-bold ${feedback.isError ? 'bg-red-200 text-red-800' : 'bg-green-200 text-green-800'}`">
+            {{ feedback.message }}
+          </div>
+
           <label class="block text-left">
             <span class="font-semibold text-gray-900 dark:text-white">Your Name</span>
             <input
               type="text"
-              name="name"
+              name="user_name"
               placeholder="Your Name"
               required
-              class="w-full border-2 border-black dark:border-white rounded-3xl p-3 mt-1 bg-white dark:bg-slate-700 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+              class="w-full border-2 border-black dark:border-white rounded-3xl p-3 mt-1 bg-white dark:bg-slate-800 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+            <!-- Note: name="user_name" harus sesuai dengan template EmailJS -->
           </label>
 
           <label class="block text-left">
             <span class="font-semibold text-gray-900 dark:text-white">Email Address</span>
             <input
               type="email"
-              name="email"
+              name="user_email"
               placeholder="Your Email"
               required
-              class="w-full border-2 border-black dark:border-white rounded-3xl p-3 mt-1 bg-white dark:bg-slate-700 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+              class="w-full border-2 border-black dark:border-white rounded-3xl p-3 mt-1 bg-white dark:bg-slate-800 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400" />
           </label>
 
           <label class="block text-left">
@@ -77,17 +90,58 @@
               rows="5"
               placeholder="Tell me about your project..."
               required
-              class="w-full border-2 border-black dark:border-white rounded-3xl p-3 mt-1 bg-white dark:bg-slate-700 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
+              class="w-full border-2 border-black dark:border-white rounded-3xl p-3 mt-1 bg-white dark:bg-slate-800 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
           </label>
 
           <button
             type="submit"
-            class="w-full bg-blue-200 text-black border-2 border-black dark:border-white rounded-full py-3 font-semibold hover:bg-sky-400 transition-all flex justify-center items-center gap-2">
-            Send Message
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" /></svg>
+            :disabled="isLoading"
+            class="w-full dark:bg-blue-900 dark:text-white bg-blue-200 text-black border-2 border-black dark:border-white rounded-full py-3 font-semibold hover:bg-sky-400 transition-all flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            <span v-if="isLoading">Sending...</span>
+            <span v-else>Send Message</span>
+            <svg v-if="!isLoading" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" /></svg>
           </button>
         </form>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+  import { ref } from 'vue';
+  import emailjs from '@emailjs/browser';
+
+  const formRef = ref(null);
+  const isLoading = ref(false);
+  const feedback = ref({ message: '', isError: false });
+
+  const sendEmail = () => {
+    isLoading.value = true;
+    feedback.value = { message: '', isError: false };
+
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.value, {
+        publicKey: PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          isLoading.value = false;
+          feedback.value = { message: 'Message sent successfully! I will reply soon.', isError: false };
+          formRef.value.reset();
+
+          setTimeout(() => {
+            feedback.value.message = '';
+          }, 5000);
+        },
+        (error) => {
+          console.error('FAILED...', error.text);
+          isLoading.value = false;
+          feedback.value = { message: 'Failed to send message. Please try again or email me manually.', isError: true };
+        }
+      );
+  };
+</script>
