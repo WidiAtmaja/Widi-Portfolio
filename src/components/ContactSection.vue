@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-24 bg-gray-100 dark:bg-slate-800">
+  <section id="contact" class="py-20 bg-gray-100 dark:bg-slate-800">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <div class="grid md:grid-cols-2 gap-20 items-start">
         <!-- Bagian Kiri: Informasi Kontak (TETAP SAMA) -->

@@ -8,13 +8,13 @@
       </div>
 
       <div class="text-center">
-        <h1 class="text-black dark:text-white text-7xl sm:text-9xl lg:text-[10rem] font-extrabold leading-none">FULL STACK</h1>
-        <h1 class="text-7xl sm:text-8xl lg:text-9xl font-extrabold leading-none text-stroke">DEVELOPER</h1>
+        <h1 class="text-black dark:text-white text-5xl sm:text-9xl lg:text-[10rem] font-extrabold leading-none">FULL STACK</h1>
+        <h1 class="text-6xl sm:text-8xl lg:text-9xl font-extrabold leading-none text-stroke">DEVELOPER</h1>
       </div>
 
       <div class="flex justify-center mt-6 mb-10 w-full">
         <div class="w-full max-w-4xl flex justify-between items-center px-4">
-          <p class="text-lg md:text-xl text-gray-700 dark:text-gray-200">Based in Bali, Singaraja</p>
+          <p class="text-sm md:text-xl sm:text-lg text-gray-700 dark:text-gray-200 italic">Based in Bali, Singaraja</p>
           <div class="flex gap-4 items-center relative z-50">
             <a href="mailto:bagaabagusatma98@gmail.com" class="transition-transform duration-300 hover:scale-110" target="_blank" aria-label="Email Widi Atmaja">
               <div class="bg-green-300 dark:bg-green-600/50 justify-center border-2 border-black dark:border-white rounded-full p-2.5">

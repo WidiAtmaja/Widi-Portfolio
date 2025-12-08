@@ -1,29 +1,31 @@
 <template>
   <header class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-slate-800 shadow transition-all duration-300">
-    <div class="flex justify-between items-center p-5 lg:px-12 relative z-20">
-      <div class="text-2xl font-bold dark:text-white hover:text-sky-500 hover:dark:text-sky-200"><a href="/">Widi Atmaja</a></div>
+    <div class="flex justify-between items-center p-3 lg:px-12 relative z-20">
+      <div class="text-lg sm:text-2xl font-bold dark:text-white hover:text-sky-500 hover:dark:text-sky-200"><a href="/">Widi Atmaja</a></div>
 
       <!-- Mobile-->
       <div class="md:hidden z-30">
-        <button class="relative flex flex-col justify-around w-8 h-8 focus:outline-none" @click="isMenuOpen = !isMenuOpen">
+        <button class="flex flex-col justify-center items-center gap-1.5 w-8 h-8 focus:outline-none" @click="isMenuOpen = !isMenuOpen" aria-label="Toggle Menu">
           <span
             :class="{
-              'transform rotate-45 translate-y-3 opacity-100': isMenuOpen,
-              'transform rotate-0 translate-y-0 opacity-100': !isMenuOpen,
+              'rotate-45 translate-y-2': isMenuOpen,
+              'rotate-0 translate-y-0': !isMenuOpen,
             }"
-            class="block w-full h-1 bg-black dark:bg-white transition-all duration-300 ease-in-out"></span>
+            class="block w-6 h-0.5 bg-black dark:bg-white rounded-full transition-all duration-300 ease-in-out transform origin-center"></span>
+
           <span
             :class="{
               'opacity-0': isMenuOpen,
               'opacity-100': !isMenuOpen,
             }"
-            class="block w-full h-1 bg-black dark:bg-white transition-all duration-300 ease-in-out"></span>
+            class="block w-6 h-0.5 bg-black dark:bg-white rounded-full transition-all duration-300 ease-in-out"></span>
+
           <span
             :class="{
-              'transform -rotate-45 -translate-y-3 opacity-100': isMenuOpen,
-              'transform rotate-0 translate-y-0 opacity-100': !isMenuOpen,
+              '-rotate-45 -translate-y-2': isMenuOpen,
+              'rotate-0 translate-y-0': !isMenuOpen,
             }"
-            class="block w-full h-1 bg-black dark:bg-white transition-all duration-300 ease-in-out"></span>
+            class="block w-6 h-0.5 bg-black dark:bg-white rounded-full transition-all duration-300 ease-in-out transform origin-center"></span>
         </button>
       </div>
 

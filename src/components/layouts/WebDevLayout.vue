@@ -153,7 +153,3 @@
   // Props menerima object project yang lengkap
   defineProps({ project: Object });
 </script>
-
-<style scoped>
-  /* Opsional: Tambahan font jika diperlukan */
-</style>
